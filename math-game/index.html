@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="game-card">
+        <h1>Math Game</h1>
+
+        <div class="game-info">
+            <p>Уровень: <span id="level">Начальный</span></p>
+            <p>Время: <span id="timer">5:00</span></p>
+            <p>Вопрос <span id="current-question">1</span>/10</p>
+        </div>
+
+        <div class="stats">
+            <p>Правильно: <span id="correct">0</span></p>
+            <p>Неправильно: <span id="incorrect">0</span></p>
+        </div>
+
+        <div id="question-display" class="question"></div>
+
+        <div class="input-section">
+            <!--suppress HtmlFormInputWithoutLabel -->
+            <input type="text" id="answer-input" placeholder="Введите ваш ответ">
+            <button id="submit-btn" onclick="checkAnswer()">Submit</button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+
+        <div id="game-over" class="game-over hidden">
+            <h2 id="final-message"></h2>
+            <div class="buttons">
+                <button onclick="restartGame()">Начать заново</button>
+                <button onclick="exitGame()">Выйти</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

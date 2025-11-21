@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч — RatZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lunch.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>RatZ</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="lunch.html" id="active">Собрать ланч</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="lunch-section">
+        <div class="container">
+            <h2>Супы</h2>
+            <div class="dishes-grid" id="soups-container">
+                <!-- dishes will be added here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <section class="lunch-section">
+        <div class="container">
+            <h2>Главные блюда</h2>
+            <div class="dishes-grid" id="mains-container">
+                <!-- dishes will be added here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <section class="lunch-section">
+        <div class="container">
+            <h2>Напитки</h2>
+            <div class="dishes-grid" id="drinks-container">
+                <!-- dishes will be added here dynamically -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<section class="order-section">
+    <div class="container">
+        <h2>Оформить заказ</h2>
+        <form action="https://httpbin.org/post" method="POST" class="order-form">
+            <div class="form-column">
+                <h3>Ваш заказ</h3>
+
+                <div id="order-display">
+                    <div id="order-nothing" style="display: block;">
+                        <p>Ничего не выбрано. Выберите блюда из меню выше</p>
+                    </div>
+
+                    <div class="order-block" id="order-soup-block" style="display: none;">
+                        <h4>Суп</h4>
+                        <p id="order-soup">Блюдо не выбрано</p>
+                    </div>
+
+                    <div class="order-block" id="order-main-block" style="display: none;">
+                        <h4>Главное блюдо</h4>
+                        <p id="order-main">Блюдо не выбрано</p>
+                    </div>
+
+                    <div class="order-block" id="order-drink-block" style="display: none;">
+                        <h4>Напиток</h4>
+                        <p id="order-drink">Напиток не выбран</p>
+                    </div>
+
+                    <div class="order-block" id="order-total-block" style="display: none;">
+                        <h4>Стоимость заказа</h4>
+                        <p id="order-total-price">0₽</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-column">
+                <h3>Ваши данные</h3>
+
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="subscribe" name="subscribe" checked>
+                    <label for="subscribe">Получать информацию о скидках и акциях</label>
+                </div>
+
+                <label for="phone">Номер телефона</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="address">Адрес доставки</label>
+                <input type="text" id="address" name="address" required>
+                <p class="delivery-note">Доставка осуществляется только по Москве</p>
+
+                <fieldset class="delivery-time-group">
+                    <legend>Время доставки:</legend>
+                    <div class="radio-group">
+                        <input type="radio" id="asap" name="delivery-time" value="asap" required>
+                        <label for="asap">Как можно скорее</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="specific-time" name="delivery-time" value="specific">
+                        <label for="specific-time">К указанному времени</label>
+                    </div>
+                </fieldset>
+
+                <label for="time">Укажите время доставки</label>
+                <input type="time" id="time" name="time" min="07:00" max="23:00" step="300">
+                <p class="delivery-note">Доступное время доставки с 7:00 до 23:00</p>
+
+                <div class="form-buttons">
+                    <button type="reset">Сбросить</button>
+                    <button type="submit">Отправить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<footer id="contacts">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p><a href="tel:+74951234567">+7 (800) 555-35-35</a></p>
+                <p><a href="mailto:hello@RatZ.ru">eat@ratz.ru</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Адрес</h3>
+                <p>г. Москва, ул. Ржения, д. 15</p>
+                <p>Время работы: 9:00 — 18:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>RatZ</h3>
+                <p>Доставка бизнес-ланчей</p>
+                <p>© 2025. Все права защищены.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/dishes.js"></script>
+<script src="js/render.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>
