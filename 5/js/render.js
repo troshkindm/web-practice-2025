@@ -6,6 +6,7 @@ function createDishCard(dish) {
     const card = document.createElement('div');
     card.className = 'dish-card';
     card.setAttribute('data-dish', dish.keyword);
+    card.setAttribute('data-kind', dish.kind);
 
     card.innerHTML = `
         <img src="${dish.image}" alt="${dish.name}">
@@ -22,6 +23,8 @@ function displayDishesByCategory(category, containerId) {
     const container = document.querySelector(containerId);
     if (!container) return;
 
+    container.innerHTML = '';
+
     const categoryDishes = dishes.filter(dish => dish.category === category);
     const sortedDishes = sortDishesByName(categoryDishes);
 
@@ -31,8 +34,14 @@ function displayDishesByCategory(category, containerId) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function displayAllDishes() {
     displayDishesByCategory('soup', '#soups-container');
     displayDishesByCategory('main', '#mains-container');
+    displayDishesByCategory('salad', '#salads-container');
     displayDishesByCategory('drink', '#drinks-container');
+    displayDishesByCategory('dessert', '#desserts-container');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayAllDishes();
 });
