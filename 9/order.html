@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформить заказ — RatZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lunch.css">
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>RatZ</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="lunch.html">Собрать ланч</a>
+            <a href="order.html">Оформить заказ</a>
+            <a href="orders.html">Мои заказы</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="order-composition-section">
+        <div class="container">
+            <h2>Состав заказа</h2>
+            <div id="order-dishes-container" class="dishes-grid">
+            </div>
+            <div id="empty-order" style="display: none;">
+                <p>Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на страницу <a href="lunch.html">Собрать ланч</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-form-section">
+        <div class="container">
+            <h2>Оформление заказа</h2>
+            <form id="order-form" class="order-form">
+                <div class="form-column">
+                    <h3>Ваш заказ</h3>
+                    <div id="order-summary">
+                        <div class="order-item">
+                            <span>Суп</span>
+                            <span id="summary-soup">Не выбран</span>
+                        </div>
+                        <div class="order-item">
+                            <span>Главное блюдо</span>
+                            <span id="summary-main">Не выбрано</span>
+                        </div>
+                        <div class="order-item">
+                            <span>Салат или стартер</span>
+                            <span id="summary-salad">Не выбран</span>
+                        </div>
+                        <div class="order-item">
+                            <span>Напиток</span>
+                            <span id="summary-drink">Не выбран</span>
+                        </div>
+                        <div class="order-item">
+                            <span>Десерт</span>
+                            <span id="summary-dessert">Не выбран</span>
+                        </div>
+                        <div class="order-item order-total">
+                            <span>Итого</span>
+                            <span id="summary-total">0₽</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-column">
+                    <h3>Ваши данные</h3>
+
+                    <label for="full_name">Имя</label>
+                    <input type="text" id="full_name" name="full_name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="subscribe" name="subscribe" value="1" checked>
+                        <label for="subscribe">Получать информацию о скидках и акциях</label>
+                    </div>
+
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="delivery_address">Адрес доставки</label>
+                    <input type="text" id="delivery_address" name="delivery_address" required>
+                    <p class="delivery-note">Доставка осуществляется только по Москве</p>
+
+                    <fieldset class="delivery-time-group">
+                        <legend>Время доставки:</legend>
+                        <div class="radio-group">
+                            <input type="radio" id="now" name="delivery_type" value="now" required checked>
+                            <label for="now">Как можно скорее</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="by_time" name="delivery_type" value="by_time">
+                            <label for="by_time">К указанному времени</label>
+                        </div>
+                    </fieldset>
+
+                    <label for="delivery_time">Укажите время доставки</label>
+                    <input type="time" id="delivery_time" name="delivery_time" min="07:00" max="23:00" step="300">
+                    <p class="delivery-note">Доступное время доставки с 7:00 до 23:00</p>
+
+                    <label for="comment">Комментарий к заказу</label>
+                    <textarea id="comment" name="comment" rows="4"></textarea>
+
+                    <div class="form-buttons">
+                        <button type="button" id="reset-order">Сбросить</button>
+                        <button type="submit">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer id="contacts">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p><a href="tel:+74951234567">+7 (800) 555-35-35</a></p>
+                <p><a href="mailto:hello@RatZ.ru">eat@ratz.ru</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Адрес</h3>
+                <p>г. Москва, ул. Ржения, д. 15</p>
+                <p>Время работы: 9:00 — 18:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>RatZ</h3>
+                <p>Доставка бизнес-ланчей</p>
+                <p>© 2025. Все права защищены.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/dishes.js"></script>
+<script src="js/order.js"></script>
+<script src="js/orderpage.js"></script>
+</body>
+</html>

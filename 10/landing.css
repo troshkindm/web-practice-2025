@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    letter-spacing: -0.02em;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 99, 71, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-title {
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.hero-image {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.hero-stats {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff6347;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+.about-section {
+    background-color: #fafafa;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    border: 1px solid #e5e5e5;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h5 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: #666;
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.advantages-section {
+    background-color: white;
+}
+
+.advantage-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #ff6347 0%, #ff8c69 100%);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover::before {
+    transform: scaleY(1);
+}
+
+.advantage-card:hover {
+    border-color: #ff6347;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(255, 99, 71, 0.15);
+}
+
+.advantage-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ff6347;
+    opacity: 0.2;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.advantage-card h4 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.menu-preview {
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+}
+
+.dish-preview-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #e5e5e5;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+}
+
+.dish-preview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    border-color: #ff6347;
+}
+
+.dish-preview-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #ff6347 0%, #ff8c69 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dish-preview-card h4 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.dish-preview-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.dish-preview-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff6347;
+}
+
+.dish-preview-weight {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    position: relative;
+    padding: 10rem 0 !important;
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #ff6347 0%, #ff8c69 100%);
+    padding: 4rem;
+    border-radius: 2rem;
+    color: white;
+    box-shadow: 0 20px 60px rgba(255, 99, 71, 0.3);
+}
+
+.cta-card h2 {
+    line-height: 1.2;
+}
+
+.contact-section {
+    background-color: #fafafa;
+}
+
+.contact-form .form-control {
+    border: 2px solid #e5e5e5;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: #ff6347;
+    box-shadow: 0 0 0 0.25rem rgba(255, 99, 71, 0.15);
+}
+
+.contact-form .form-label {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.contact-info-item {
+    margin-bottom: 2.5rem;
+}
+
+.contact-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info-item h5 {
+    font-weight: 700;
+}
+
+.contact-info-item a {
+    color: #1a1a1a;
+    transition: color 0.3s ease;
+}
+
+.contact-info-item a:hover {
+    color: #ff6347;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.footer h4,
+.footer h5 {
+    color: white;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ff6347;
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 991.98px) {
+    .hero-section .row {
+        min-height: auto !important;
+        padding: 4rem 0;
+    }
+
+    .cta-section {
+        padding: 8rem 0 !important;
+    }
+
+    .cta-card {
+        padding: 2.5rem;
+        text-align: center;
+    }
+
+    .advantage-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .display-3 {
+        font-size: 2.5rem;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .display-5 {
+        font-size: 1.75rem;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .cta-card {
+        padding: 2rem;
+    }
+
+    .advantage-number {
+        font-size: 2rem;
+    }
+}
